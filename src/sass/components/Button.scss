@@ -1,0 +1,31 @@
+%buttons {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+%icons {
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-right: 1rem;
+}
+.Button {
+  &-google {
+    @extend %buttons;
+    background-color: rgb(40, 52, 59);
+    margin-bottom: 15px;
+    svg {
+      @extend %icons;
+    }
+  }
+  &-facebook {
+    @extend %buttons;
+    background-color: rgb(39, 47, 52);
+    svg {
+      @extend %icons;
+      fill: #2a7fd5;
+    }
+  }
+}
