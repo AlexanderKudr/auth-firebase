@@ -5,7 +5,14 @@
   padding: 10px;
   border-radius: 5px;
   color: white;
+  transition: all 0.3s;
+  &:hover {
+    background-color: rgb(49, 82, 102);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
 }
+
 %icons {
   height: 1.2rem;
   width: 1.2rem;
@@ -14,7 +21,7 @@
 .Button {
   &-google {
     @extend %buttons;
-    background-color: rgb(40, 52, 59);
+    background-color: rgb(57, 68, 75);
     margin-bottom: 15px;
     svg {
       @extend %icons;
@@ -26,6 +33,9 @@
     svg {
       @extend %icons;
       fill: #2a7fd5;
+    }
+    &:hover {
+      background-color: rgb(11, 62, 94);
     }
   }
 }

@@ -1,8 +1,8 @@
 import { Button as ButtonProps } from "../types/Button";
 
-export const Button = ({ className, icon, text }: ButtonProps) => {
+export const Button = ({ className, icon, text, provider }: ButtonProps) => {
   return (
-    <div className={className}>
+    <div onClick={provider} className={className}>
       {icon}
       {text}
     </div>

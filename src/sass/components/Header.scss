@@ -1,9 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
 .header {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 100px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  font-style: italic;
 }
 .join-now {
   background-color: rgb(11, 144, 153);
@@ -11,6 +16,11 @@
   color: white;
   border: none;
   font-weight: 600;
-  padding: 10px;
+  padding: 7px;
   border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    transform: scale(1.02);
+  }
 }
