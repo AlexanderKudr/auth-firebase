@@ -1,6 +1,6 @@
 import * as dotenv from "dotenv";
 dotenv.config();
-
+//test
 export const apiKey = process.env.VITE_API_KEY;
 export const authDomain = process.env.VITE_AUTH_DOMAIN;
 export const projectId = process.env.VITE_PROJECT_ID;
