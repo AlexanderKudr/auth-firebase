@@ -1,6 +1,5 @@
-import { Button } from "../components/Button";
+import { Button } from "../components/ButtonLogin";
 import { FcGoogle } from "react-icons/fc";
-import { AiFillFacebook } from "react-icons/ai";
 import { GoogleLogin } from "../firebase/logins";
 
 export const buttonsData = [
@@ -10,13 +9,6 @@ export const buttonsData = [
     icon: <FcGoogle />,
     text: "Sign in with Google",
     provider: GoogleLogin,
-  },
-  {
-    key: crypto.randomUUID(),
-    className: "Button-facebook",
-    icon: <AiFillFacebook />,
-    text: "Sign in with Facebook",
-    // provider: Facebook,
   },
 ];
 export const buttons = buttonsData.map(

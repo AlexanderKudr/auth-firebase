@@ -1,10 +1,11 @@
-import { Button as ButtonProps } from "../types/Button";
-
-export const Button = ({ className, icon, text, provider }: ButtonProps) => {
+interface Button {
+  className: string;
+  signOut: Function;
+}
+export const Button = ({ className, signOut }: Button) => {
   return (
-    <div onClick={provider} className={className}>
-      {icon}
-      {text}
-    </div>
+    <button className="sign-out" onClick={signOut}>
+      Sign out
+    </button>
   );
 };

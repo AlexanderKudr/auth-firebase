@@ -1,13 +1,17 @@
 import { auth } from "../firebase/firebase";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { User, Error } from "../types/logins";
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 
 const googleProvider = new GoogleAuthProvider();
 
+const extractUser = ({ user }: User) => console.log(user);
+const extractError = ({ error }: Error) => console.log(error);
+
 export const GoogleLogin = async () => {
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    console.log(result.user);
-  } catch (error) {
-    console.log(error);
-  }
+  await signInWithPopup(auth, googleProvider)
+    .then(extractUser)
+    .catch(extractError);
 };
