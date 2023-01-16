@@ -8,9 +8,10 @@ export const Dashboard = () => {
   return (
     <>
       <Header />
-      <div style={{ paddingTop: "100px", textAlign: "center" }}>
-        <Title title={`Welcome to your dashboard ${user?.displayName}`} />
-      </div>
+      <Title
+        style={{ paddingTop: "100px", textAlign: "center" }}
+        title={`Welcome to your dashboard ${user?.displayName}`}
+      />
     </>
   );
 };

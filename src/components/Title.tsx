@@ -1,3 +1,7 @@
-export const Title = ({ title }: { title: string }) => {
-  return <h2 className="title">{title}</h2>;
+export const Title = ({ title, style }: { title: string; style?: {} }) => {
+  return (
+    <h2 style={style} className="title">
+      {title}
+    </h2>
+  );
 };

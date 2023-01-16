@@ -1,4 +1,4 @@
-import { Button } from "../components/ButtonLogin";
+import { Button } from "../components/Button";
 import { FcGoogle } from "react-icons/fc";
 import { GoogleLogin } from "../firebase/logins";
 
@@ -17,8 +17,7 @@ export const buttons = buttonsData.map(
       key={key}
       className={className}
       icon={icon}
-      text={text}
-      provider={provider}
-    />
+      onClick={provider}
+    >{text}</Button>
   )
 );

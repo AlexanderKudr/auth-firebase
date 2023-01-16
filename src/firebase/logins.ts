@@ -6,7 +6,6 @@ import {
 } from "firebase/auth";
 
 const googleProvider = new GoogleAuthProvider();
-
 const extractUser = ({ user }: User) => console.log(user);
 const extractError = ({ error }: Error) => console.log(error);
 

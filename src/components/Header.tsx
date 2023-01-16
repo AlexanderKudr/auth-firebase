@@ -1,18 +1,22 @@
 import { auth } from "../firebase/firebase";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { Button } from "./Button";
 import { useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [user, loading] = useAuthState(auth);
-  const navigateToLoginPage = () => navigate("/login");
+  const pathLogin = location.pathname !== "/login";
+  
+  const navigateToIndexPage = () => navigate("/");
   const signOut = () => {
     auth.signOut();
-    setTimeout(() => {
-      navigateToLoginPage();
-    }, 500);
+    setTimeout(navigateToIndexPage, 500);
   };
+
   useEffect(() => {
     user ? navigate("/dashboard") : console.log("sign out");
   }, [user]);
@@ -22,15 +26,20 @@ export const Header = () => {
       <Link to={"/"} className="authentor logo">
         Authentor
       </Link>
-
       {user ? (
-        <button className="sign-out" onClick={signOut}>
-          Sign out
-        </button>
+        <Button className={"Button-sign-out"} onClick={signOut}>
+          <span>Sign out</span>
+        </Button>
       ) : (
-        <Link to={"/login"}>
-          <button className="join-now">Join now</button>
-        </Link>
+        <>
+          {pathLogin && (
+            <Link to={"/login"}>
+              <Button className={"Button-join-now"}>
+                <span>Join now</span>
+              </Button>
+            </Link>
+          )}
+        </>
       )}
     </header>
   );

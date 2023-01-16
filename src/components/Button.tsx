@@ -1,11 +1,12 @@
-interface Button {
-  className: string;
-  signOut: Function;
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  icon?: React.ReactElement;
 }
-export const Button = ({ className, signOut }: Button) => {
+
+export const Button = ({ children, icon, ...rest }: Props) => {
   return (
-    <button className="sign-out" onClick={signOut}>
-      Sign out
+    <button {...rest} >
+      {icon && icon}
+      {children}
     </button>
   );
 };
