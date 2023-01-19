@@ -7,14 +7,14 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 export const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
   const [user, loading] = useAuthState(auth);
-  const pathLogin = location.pathname !== "/login";
+
   
+  const pathLogin = () => location.pathname !== "/login";
   const navigateToIndexPage = () => navigate("/");
   const signOut = () => {
     auth.signOut();
-    setTimeout(navigateToIndexPage, 500);
+    setTimeout(navigateToIndexPage, 140);
   };
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const Header = () => {
         </Button>
       ) : (
         <>
-          {pathLogin && (
+          {pathLogin() && (
             <Link to={"/login"}>
               <Button className={"Button-join-now"}>
                 <span>Join now</span>
